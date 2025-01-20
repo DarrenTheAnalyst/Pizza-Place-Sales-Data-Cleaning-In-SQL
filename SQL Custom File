@@ -33,7 +33,7 @@ SELECT
 
 DISTINCT (
   replace
-  (replace(order_id,'AA','' ),
+  (replace(order_id,'AA',''),
   '_','' )
 ) AS [order_id],
   date,
