@@ -1,0 +1,62 @@
+1. Clean order_details_dirty table.
+
+Modify the quantity for each order_details_id to 1.
+
+SELECT
+
+  order_details_id,
+  order_id,
+  pizza_id,
+
+CASE
+
+  WHEN quantity = 5 THEN quantity/5
+  WHEN quantity = 4 THEN quantity/4
+  WHEN quantity = 3 THEN quantity/3
+  WHEN quantity = 2 THEN quantity/2
+  WHEN quantity = 1 THEN quantity/1
+  ELSE 0
+  END
+  AS [quantity]
+
+FROM
+  order_details_dirty;
+
+2. Clean orders_dirty table.
+
+Modify order_id to integer.
+Ensure that date values are dates and not null.
+Modify time to the time convention.
+Remove duplicates from the table. 
+
+SELECT
+
+DISTINCT (
+  replace
+  (replace(order_id,'AA','' ),
+  '_','' )
+) AS [order_id],
+  date,
+  replace(time,'.',':') AS [time]
+
+FROM
+  orders_dirty
+
+WHERE
+  date is not NULL;
+
+3. Clean pizzas_dirty table.
+
+Create consistent pizza_id strings.
+Modify size to lower case.
+Modify price from a string by removing the dollar sign.
+
+SELECT
+
+pizza_type_id ||'_'|| lower(size) AS [pizza_id],
+pizza_type_id,
+lower(size) AS [size],
+replace(price,'$','') AS [price]
+
+FROM
+pizzas_dirty;
