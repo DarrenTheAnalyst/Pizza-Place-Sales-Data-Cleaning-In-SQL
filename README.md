@@ -15,3 +15,7 @@ The following is a list of certain syntax used in the RDBMS SQLite.
     / Divide   
 # Other Syntax
     Alias
+
+# Pizza-Place-Sales-Data-Cleaning-In-Power-Query
+
+I took a separate approach to cleaning and transforming the same dataset in Power Query, the results of which cannot be displayed here. 
