@@ -1,6 +1,6 @@
 # Pizza-Place-Sales-Data-Cleaning-In-SQL
 
-I took a separate approach to cleaning and transforming the same dataset in Power Query, the results of which cannot be displayed here. 
+I took a separate practice approach to cleaning and transforming the same dataset in Power Query, the results of which cannot be displayed here. 
 
 The following is a list of certain syntax used in the RDBMS SQLite. 
 
